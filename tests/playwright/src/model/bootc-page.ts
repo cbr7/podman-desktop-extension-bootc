@@ -76,6 +76,7 @@ export class BootcPage {
     pathToStore: string,
     type: string,
     architecture: ArchitectureType,
+    overwrite = true,
     timeout = 600_000,
   ): Promise<boolean> {
     let result = false;
@@ -151,7 +152,7 @@ export class BootcPage {
         throw new Error(`Unknown architecture: ${architecture}`);
     }
 
-    if (await this.overwriteCheckbox.isVisible()) {
+    if (overwrite && (await this.overwriteCheckbox.isVisible())) {
       await this.checkCheckbox(this.overwriteCheckbox);
     }
 
