@@ -52,7 +52,14 @@ export class BootcDashboardPage {
 
     const bootcBuildImagePage = new BootcPage(this.page, this.webview);
     await playExpect(bootcBuildImagePage.heading).toBeVisible({ timeout: 10_000 });
-    return await bootcBuildImagePage.buildDiskImage(imageName, pathToStore, type, ArchitectureType.Default, timeout);
+    return await bootcBuildImagePage.buildDiskImage(
+      imageName,
+      pathToStore,
+      type,
+      ArchitectureType.Default,
+      timeout,
+      true,
+    );
   }
 
   public async getDemoImageName(): Promise<string> {
