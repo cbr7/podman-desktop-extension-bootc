@@ -56,7 +56,7 @@ export class BootcExamples {
 
     const bootcBuildImagePage = new BootcPage(this.page, this.webview);
     await playExpect(bootcBuildImagePage.heading).toBeVisible({ timeout: 10_000 });
-    return await bootcBuildImagePage.buildDiskImage(image, pathToStore, type, ArchitectureType.Default, true, timeout);
+    return await bootcBuildImagePage.buildDiskImage(image, pathToStore, type, ArchitectureType.Default, timeout, true);
   }
 
   public pullImageButtonLocator(name: string): Locator {

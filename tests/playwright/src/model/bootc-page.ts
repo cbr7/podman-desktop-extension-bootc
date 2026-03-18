@@ -76,8 +76,8 @@ export class BootcPage {
     pathToStore: string,
     type: string,
     architecture: ArchitectureType,
-    overwrite = true,
     timeout = 600_000,
+    overwrite = true,
   ): Promise<boolean> {
     let result = false;
 
